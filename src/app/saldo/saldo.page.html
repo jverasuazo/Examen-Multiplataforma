@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="ion-text-center">
+    <ion-title>Mi cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding ion-text-center">
+  <!-- Datos del usuario -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Jaime Vera</ion-card-subtitle>
+      <p>{{'jaimeverasuazo@gmail.com'}}</p>
+    </ion-card-header>
+  </ion-card>
+
+ <!-- Datos bancarios -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Saldo Total</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-label class="saldo-label">$565.252</ion-label>
+    </ion-card-content>
+  </ion-card>
+
+   <!-- Botones -->
+  <ion-card>
+    <ion-button size="small" expand="full" routerLink="/movimientos">Ver movimientos</ion-button>
+    <br>
+    <ion-button size="small" expand="full" routerLink="/home" class="custom-button">Cerrar Sesión</ion-button>
+  </ion-card>
+</ion-content>

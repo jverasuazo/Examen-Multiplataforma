@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Volver" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  
+    <ion-title>Movimientos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+    <ion-list lines="full">
+      <ion-item *ngFor="let movimiento of movimientos">
+        <ion-icon [name]="movimiento.tipo === 'ingreso' ? 'arrow-up-outline' : 'arrow-down-outline'" slot="start"></ion-icon>
+        <ion-label>
+          <h2>{{ movimiento.descripcion }}</h2>
+          <p>{{ movimiento.fecha | date: 'dd/MM/yyyy HH:mm' }}</p>
+        </ion-label>
+        <ion-note slot="end" [color]="movimiento.tipo === 'ingreso' ? 'success' : 'danger'">
+          {{ movimiento.tipo === 'ingreso' ? '+' : '-' }} {{ movimiento.monto | currency:'CLP':'symbol':'1.0-0' }}
+        </ion-note>
+      </ion-item>
+    </ion-list>
+</ion-content>
